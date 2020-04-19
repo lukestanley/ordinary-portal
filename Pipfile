@@ -1,0 +1,22 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+"hex2words" = "*"
+rsa = "*"
+websocket-client = "*"
+pyaes = "*"
+
+
+[requires]
+
+python_version = "3.6"
