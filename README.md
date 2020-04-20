@@ -33,7 +33,7 @@ sudo pip install autobahn[twisted]
 
 python server.py
 
-Probably should run that on a publicly accessible VPS.
+I'm running that on a publicly accessible VPS until it is abused.
 
 Then clients would connect to it. Currently config.py has the websocket message broker's server and port specified.
 

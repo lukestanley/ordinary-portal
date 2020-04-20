@@ -15,13 +15,14 @@ from hex2words.hex2words import hex2words
 
 from config import host, is_testing
 
-# exclusive_secret = bytes(input('message to send:'),'utf-8')
-exclusive_secret = b"oh yay hi!"
-# exclusive_secret=open("cat.png", "rb").read()
 
 if is_testing:
+    exclusive_secret = b"oh yay hi!"
     random_hex = "105bf"
 else:
+    exclusive_secret = bytes(input('Enter a super secret message to send securely:'), 'utf-8')
+    # TODO: file input option and CLI args
+    # exclusive_secret=open("cat.png", "rb").read()
     random_hex = uuid4().hex[:8]
 
 pass_phrase_words = hex2words(random_hex)
