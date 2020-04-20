@@ -37,7 +37,7 @@ I'm running that on a publicly accessible VPS until it is abused.
 
 Then clients would connect to it. Currently config.py has the websocket message broker's server and port specified.
 
-With Pipenv installed you could run to "open a portal":
+With Pipenv dependencies installed you could run to "open a portal":
 
 pipenv run python portal_uploader.py
 
