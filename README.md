@@ -46,7 +46,17 @@ Then get the data passed through the portal using:
 pipenv run python downloader.py
 (after entering the key).
 
-Most of the time, it should be possible to reuse a shared websocket server as a message broker.
-That's the idea anyhow!
+### Experimental pip installation:
+
+pip3 install --user https://github.com/lukestanley/ordinary-portal/archive/master.zip
+
+### Upload the super secret message by running this and following prompts:
+
+python3 -m ordinary_portal.uploader
+
+### Receive the message by running this:
+python3 -m ordinary_portal.downloader
+
+
 
 WIP!

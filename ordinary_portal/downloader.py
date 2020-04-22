@@ -2,13 +2,13 @@ from rsa import newkeys as random_key, decrypt as rsa_public_key_decryption
 from pyaes import AESModeOfOperationCTR as AESCounterMode
 
 from websocket import WebSocketApp as WebSocketClient
-from utils import (
+from ordinary_portal.utils import (
     decrypt_payload_with_session,
     make_key_of_set_length,
     package_binary_as_text,
     unpack_binary_from_safe_ascii,
 )
-from config import host, is_testing
+from ordinary_portal.config import host, is_testing
 
 if is_testing:
     pass_phrase_words = "assume exodus"

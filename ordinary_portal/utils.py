@@ -5,6 +5,7 @@ from hashlib import sha256
 
 import rsa
 from pyaes import AESModeOfOperationCTR as AESCounterMode
+from rsa import PublicKey as PublicKeyHandler
 
 rounds = int(10000000 / 4)
 
@@ -58,3 +59,18 @@ def decrypt_payload_with_session(payload_as_text, private_key):
         session_encrypted_payload
     )
     return decrypted_payload_binary
+
+
+def get_public_key(possible_public_key_response_from_peer, shared_byte_key):
+    try:
+        bytes_again = unpack_binary_from_safe_ascii(
+            possible_public_key_response_from_peer
+        )
+        # Decode using public key:
+        public_key_pack = AESCounterMode(shared_byte_key).decrypt(bytes_again)
+        # Unpack the key from it's pkcs1 wrapper:
+        public_key = PublicKeyHandler.load_pkcs1(public_key_pack)
+        return public_key
+    except Exception as e:
+        print("decrypt fail", e)
+        return None
