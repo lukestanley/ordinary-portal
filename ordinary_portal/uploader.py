@@ -28,7 +28,7 @@ def generate_pass_phrase():
         random_hex = "105bf"
     else:
         random_hex = uuid4().hex[:8]
-    pass_phrase_words = hex2words(random_hex)
+    pass_phrase_words = hex2words(random_hex).lower()
     return pass_phrase_words
 
 
