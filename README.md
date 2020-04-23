@@ -48,14 +48,14 @@ pipenv run python downloader.py
 
 ### Experimental pip installation:
 
-pip3 install --user https://github.com/lukestanley/ordinary-portal/archive/master.zip
+pip3 install --user --upgrade https://github.com/lukestanley/ordinary-portal/archive/master.zip
 
 ### Upload the super secret message by running this and following prompts:
 
-python3 -m ordinary_portal.uploader
+python3 -m ordinary_portal.send
 
 ### Receive the message by running this:
-python3 -m ordinary_portal.downloader
+python3 -m ordinary_portal.download
 
 
 

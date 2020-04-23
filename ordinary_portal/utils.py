@@ -7,7 +7,7 @@ import rsa
 from pyaes import AESModeOfOperationCTR as AESCounterMode
 from rsa import PublicKey as PublicKeyHandler
 
-rounds = int(10000000 / 4)
+rounds = 1250000
 
 
 def package_binary_as_text(byte_array):

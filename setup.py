@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='ordinary_portal',
-    version='0.2a',
+    version='0.3a',
     url='https://github.com/lukestanley/ordinary-portal',
     license='GPL',
     author='Luke Stanley',
