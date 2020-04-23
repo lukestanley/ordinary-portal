@@ -40,7 +40,7 @@ ordinary_portal send
 ### Receive the message by running this:
 ordinary_portal download
 
-####This is a work in progress!
+**This is a work in progress!**
 
 **Websocket server dependencies**
 Currently the Pipfile records the dependencies for the 'Portal Creator' and the 'Downloader', but not the 'server'.
