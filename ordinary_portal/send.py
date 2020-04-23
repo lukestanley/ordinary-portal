@@ -15,7 +15,7 @@ def get_super_secret(filename=None):
     if filename:
         return open(filename, "rb").read()
     else:
-        return bytes(input('Enter a super secret message to send securely:'), 'utf-8')
+        return bytes(input("Enter a super secret message to send securely:"), "utf-8")
 
 
 def generate_pass_phrase():
@@ -64,5 +64,5 @@ def send(filename=None):
     WebSocketClient(host, on_message=on_message).run_forever()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     send()

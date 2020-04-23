@@ -27,12 +27,12 @@ from ordinary_portal.config import is_testing
 def main():
     arguments = docopt(__doc__)
     if is_testing:
-        print('Arguments received:', arguments)
-    if arguments['send']:
-        filename = arguments.get('<filename>', [None])[0]
+        print("Arguments received:", arguments)
+    if arguments["send"]:
+        filename = arguments.get("<filename>", [None])[0]
         send(filename=filename)
-    if arguments['download']:
-        pass_phrase_list = arguments.get('<pass_phrase>', None)
+    if arguments["download"]:
+        pass_phrase_list = arguments.get("<pass_phrase>", None)
         if pass_phrase_list:
-            pass_string = ' '.join(pass_phrase_list)
+            pass_string = " ".join(pass_phrase_list)
         download(pass_string)
