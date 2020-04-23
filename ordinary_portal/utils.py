@@ -43,11 +43,15 @@ def encrypt_binary_payload_with_session_key_and_public_key(payload, public_key):
             session_encrypted_payload=package_binary_as_text(session_encrypted_payload),
         )
     )
+    # TODO: reduce metadata leakage profile, maybe use random padding?
     return bundle
 
 
 def decrypt_payload_with_session(payload_as_text, private_key):
-    bundle = json.loads(payload_as_text)
+    try:
+        bundle = json.loads(payload_as_text)
+    except json.JSONDecodeError:
+        return
     encrypted_session_key = unpack_binary_from_safe_ascii(
         bundle["encrypted_session_key"]
     )  # just for me

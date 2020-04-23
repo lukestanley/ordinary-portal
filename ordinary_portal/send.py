@@ -11,15 +11,11 @@ from hex2words.hex2words import hex2words
 from ordinary_portal.config import host, is_testing
 
 
-def get_super_secret():
-    # TODO: replace silly is_testing blocks and OTT comments with unit tests.
-    if is_testing:
-        super_secret = b"oh yay hi!"
+def get_super_secret(filename=None):
+    if filename:
+        return open(filename, "rb").read()
     else:
-        super_secret = bytes(input('Enter a super secret message to send securely:'), 'utf-8')
-        # TODO: file input option and CLI args
-        # super_secret=open("cat.png", "rb").read()
-    return super_secret
+        return bytes(input('Enter a super secret message to send securely:'), 'utf-8')
 
 
 def generate_pass_phrase():
@@ -32,7 +28,7 @@ def generate_pass_phrase():
     return pass_phrase_words
 
 
-def main():
+def send(filename=None):
     """
     Make and print a random pass-phrase
     Spend some CPU cycles to strengthen the key.
@@ -47,7 +43,7 @@ def main():
 
     pass_phrase_words = generate_pass_phrase()
 
-    super_secret = get_super_secret()
+    super_secret = get_super_secret(filename)
 
     print("Share this key:", pass_phrase_words)
 
@@ -69,4 +65,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    send()
