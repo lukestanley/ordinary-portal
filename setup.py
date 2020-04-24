@@ -1,11 +1,9 @@
 from setuptools import find_packages, setup
-from os.path import abspath, dirname, join
 
 with open("requirements.txt") as f:
     required = f.read().splitlines()
 
-this_dir = abspath(dirname(__file__))
-with open(join(this_dir, "README.rst"), encoding="utf-8") as file:
+with open("README.md") as file:
     long_description = file.read()
 
 setup(
@@ -20,6 +18,6 @@ setup(
     install_requires=required,
     packages=find_packages(),
     entry_points={
-        "console_scripts": ["ordinary_portal=ordinary_portal.__main__:main",],
+        "console_scripts": ["ordinary_portal=ordinary_portal.__main__:main"],
     },
 )

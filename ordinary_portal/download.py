@@ -7,7 +7,7 @@ from ordinary_portal.utils import (
     make_key_of_set_length,
     package_binary_as_text,
 )
-from ordinary_portal.config import host, is_testing
+from ordinary_portal.config import host
 
 
 def download(pass_phrase_words=None):
